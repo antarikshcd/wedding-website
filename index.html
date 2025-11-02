@@ -42,6 +42,45 @@ html, body {
   pointer-events: none;
 }
 
+/* Elegant title below navbar */
+.couple-title {
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInName 1.2s ease-out forwards;
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeInName {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make it responsive */
+@media (max-width: 992px) {
+  .couple-title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .couple-title {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 480px) {
+  .couple-title {
+    font-size: 38px;
+  }
+}
+
+
 </style>
 
 <head>
@@ -91,19 +130,20 @@ html, body {
         <div class="container">
           <div class="row">
             <div class="col-xs-10 text-right menu-1">
-              <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#fh5co-event">Events</a></li>
-                <li><a href="#fh5co-gallery">Gallery</a></li>
-                <li><a href="#fh5co-services">Highlights</a></li>
-              </ul>
+                      <ul>
+             <li class="active"><a href="index.html">Home</a></li>
+             <li><a href="#fh5co-event">Events</a></li>
+             <li><a href="#rsvp">RSVP</a></li>
+             <li><a href="#travel-tips">Travel Tips</a></li>
+           </ul>
+
             </div>
           </div>
         </div>
       </nav>
 
       <!-- Header -->
-      <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg.jpg);" data-stellar-background-ratio="0.5">
+      <!-- <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg.jpg);" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container text-center">
           <div class="row">
@@ -120,7 +160,84 @@ html, body {
             </div>
           </div>
         </div>
-      </header>
+      </header> -->
+
+      <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url('images/bg.jpg'); background-size: cover; background-position: center; data-stellar-background-ratio="0.5">
+  <div class="overlay" style="background: rgba(0,0,0,0.35);"></div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 animate-box" data-animate-effect="fadeIn" style="padding-top: 120px; padding-bottom: 80px;">
+
+        <!-- Couple Names -->
+        <h1 style="
+          font-family: 'Sacramento', 'Engagement', cursive;
+          font-size: 90px;
+          color: #fff;
+          text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
+          margin-bottom: 10px;
+        ">
+          Sailee &amp; Antariksh
+        </h1>
+
+        <!-- Golden Divider -->
+        <div style="
+          width: 120px;
+          height: 3px;
+          background: linear-gradient(90deg, #c9a23f, #ffd700, #c9a23f);
+          border-radius: 2px;
+          margin: 10px auto 25px auto;
+          box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+        "></div>
+
+        <!-- Fingerprint Logo -->
+        <img src="images/fprint.png" alt="Sailee + Antariksh" style="width: 120px; margin-bottom: 15px;">
+
+        <!-- Date -->
+        <h2 style="
+          font-family: 'Sofia Sans Condensed', sans-serif;
+          color: #ffd700;
+          font-weight: 600;
+          margin-bottom: 10px;
+          letter-spacing: 1px;
+        ">
+          21.02.2026
+        </h2>
+
+        <!-- Quote -->
+        <h2 style="
+          font-family: 'Work Sans', sans-serif;
+          color: #fff;
+          font-size: 22px;
+          font-weight: 400;
+          margin-bottom: 25px;
+          text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+        ">
+          "I have found the one whom my soul loves."
+        </h2>
+
+        <!-- Countdown -->
+        <div class="flipTimebox" style="margin-bottom: 25px;">
+          <div class="clock clock-fix"></div>
+        </div>
+
+        <!-- Button -->
+        <p><a href="#fh5co-event" class="btn btn-default btn-sm" style="
+          background-color: #ffd700;
+          color: #000;
+          font-weight: 600;
+          border: none;
+          border-radius: 25px;
+          padding: 8px 18px;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+          transition: all 0.3s ease;
+        " onmouseover="this.style.backgroundColor='#c9a23f'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#ffd700'; this.style.color='#000';">
+          Save our date
+        </a></p>
+
+      </div>
+    </div>
+  </div>
+</header>
 
 <!-- Events Section -->
 <div id="fh5co-event" class="fh5co-bg" style="
@@ -138,12 +255,33 @@ html, body {
   <!-- Container for content -->
   <div class="container" style="position: relative; z-index:2;">
 
-    <!-- Section Heading -->
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-        <h2 style="color:#fff; font-weight:700; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">Events</h2>
-      </div>
-    </div>
+
+<!-- Section Heading -->
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+    <h2 style="
+      font-family: 'Sacramento', cursive;
+      font-size: 70px;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+      margin-bottom: 10px;
+    ">
+      Events
+    </h2>
+
+    <!-- Golden underline -->
+    <div style="
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, #c9a23f, #ffd700, #c9a23f);
+      border-radius: 2px;
+      margin: 10px auto 40px auto;
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    "></div>
+  </div>
+</div>
+
 
     <!-- Row 1: Haldi Events -->
     <div class="row text-center" style="margin-bottom:50px;">
@@ -204,6 +342,168 @@ html, body {
     </div>
 
   </div> <!-- container -->
+<!-- RSVP Section -->
+<section id="rsvp" class="fh5co-bg" 
+  style="
+    background-image: url('images/elegant-wedding-set-up.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    position: relative;
+    padding: 100px 0;
+  ">
+  
+  <!-- Overlay for readability -->
+  <div class="overlay" 
+    style="
+      position: absolute; 
+      top: 0; left: 0; right: 0; bottom: 0; 
+      background: rgba(0, 0, 0, 0.55);
+    ">
+  </div>
+
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="row text-center animate-box">
+      <div class="col-md-8 col-md-offset-2">
+        <h2 style="
+          font-family: 'Sacramento', cursive; 
+          font-size: 70px; 
+          color: #fff; 
+          margin-bottom: 10px;
+          text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+        ">
+          RSVP
+        </h2>
+        <div style="
+          width: 120px;
+          height: 3px;
+          background: linear-gradient(90deg, #c9a23f, #ffd700, #c9a23f);
+          border-radius: 2px;
+          margin: 10px auto 40px auto;
+          box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+        "></div>
+        <p style="font-size: 18px; color: #fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+          Kindly let us know if you’ll be joining us on our special day!
+        </p>
+      </div>
+    </div>
+
+    <!-- Google Form Embed -->
+    <div class="row animate-box" style="margin-top:40px;">
+      <div class="col-md-10 col-md-offset-1">
+        <iframe src="YOUR_GOOGLE_FORM_EMBED_LINK_HERE" 
+          width="100%" 
+          height="800" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0" 
+          style="border-radius:15px; background: #fff;">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Travel Tips Section -->
+<section id="travel-tips" class="fh5co-bg" 
+  style="
+    background-image: url('images/goa-bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    position: relative;
+    padding: 100px 0;
+  ">
+  
+  <!-- Soft overlay for readability -->
+  <div class="overlay" 
+    style="
+      position: absolute; 
+      top: 0; left: 0; right: 0; bottom: 0; 
+      background: rgba(0, 0, 0, 0.45);
+    ">
+  </div>
+
+  <div class="container" style="position: relative; z-index: 2;">
+    <div class="row text-center animate-box">
+      <div class="col-md-8 col-md-offset-2">
+        <h2 style="
+          font-family: 'Sacramento', cursive; 
+          font-size: 70px; 
+          color: #fff; 
+          margin-bottom: 10px;
+          text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+        ">
+          Travel Tips
+        </h2>
+        <div style="
+          width: 120px;
+          height: 3px;
+          background: linear-gradient(90deg, #c9a23f, #ffd700, #c9a23f);
+          border-radius: 2px;
+          margin: 10px auto 40px auto;
+          box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+        "></div>
+        <p style="font-size: 18px; color: #fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+          Everything you need to plan your stay and enjoy Goa to the fullest!
+        </p>
+      </div>
+    </div>
+
+    <!-- Hotels -->
+    <div class="row animate-box" style="margin-top:40px;">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 style="color:#ffd700; font-weight:700;">🏨 Hotel Recommendations</h3>
+        <ul style="list-style:none; padding-left:0; line-height:1.8; color:#fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+          <li><b>Hotel Laxmi Empire</b> – Near Madgaon railway station. Margao is the closest big city from the wedding venue at a 15 min drive. Transportation from this hotel to the wedding venue will be provided by us for 21st February.</li>
+          <li><b>Regenta Baywatch Resort Goa</b> – For those who prefer beachfront accommodation. It's a 5-10 min walk from the wedding venue and is right by Sernabatim beach.</li>
+          <li><b>Taj Exotica</b> – A luxury resort option at Benaulim beach. It's a 13 min drive from the wedding venue.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Transportation -->
+    <div class="row animate-box" style="margin-top:40px;">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 style="color:#ffd700; font-weight:700;">🚗 Transportation Advice</h3>
+        <ul style="list-style:none; padding-left:0; line-height:1.8; color:#fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+          <b>Airports</b>: <li>The nearest airport is <b>Dabolim International Airport (GOI)</b>. Best way to get to Goa from Europe, however, is with Qatar airways that lands at Manohar International Airport (GOX), which is located in North Goa and is a bit far from the wedding venue. Alternately, you can land in New Delhi, Mumbai or Bangalore and take connecting flights from there.</li>
+          <b>Local Travel in Goa</b>: <li> Public transport is almost non-existent or not recommended. Use prepaid taxis or the taxi app <b>GoaMiles</b> for local travel. NOTE: <b>GoaMiles</b> is the only app for cabs that works in Goa. Unlike rest of India Uber doesn't operate here.</li>
+          <b>Trains</b>: <li>Trains to the rest of India can be taken from <b>Madgaon Railway Station</b>, located in city of Margao, which is the closest big city to the wedding venue.</li>
+          <b>Sightseeing travel</b>: <li>Rental scooters and cars are easy to find for sightseeing. But if you are uncomfortable with the notion of driving in India, then a taxi with a driver for the entire day is another option.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Things to Do -->
+    <div class="row animate-box" style="margin-top:40px;">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 style="color:#ffd700; font-weight:700;">🌴 Things to Do in Goa</h3>
+        <ul style="list-style:none; padding-left:0; line-height:1.8; color:#fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+          <li>https://goa-tourism.com/</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- General Tips -->
+    <div class="row animate-box" style="margin-top:40px;">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 style="color:#ffd700; font-weight:700;">💡 General Tips</h3>
+        <ul style="list-style:none; padding-left:0; line-height:1.8; color:#fff; text-shadow: 2px 2px 6px rgba(0,0,0,0.8);">
+          <li>Carry sunscreen, sunglasses, and light cotton clothes.</li>
+          <li>Keep some cash handy; smaller shops may not accept cards.</li>
+          <li>Respect local culture and beach etiquette.</li>
+          <li>Stay hydrated and enjoy responsibly!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 </div> <!-- #fh5co-event -->
 
 
